@@ -29,11 +29,19 @@ export default function CheckoutModal({ isOpen, onClose, items, selectedZone, on
       setIsProcessing(false);
       onOrderComplete({
         orderId: `HB-${Math.floor(100000 + Math.random() * 900000)}`,
+        id: `HB-${Math.floor(100000 + Math.random() * 900000)}`,
         items: [...items],
         customer: { ...formData },
+        customerName: formData.fullName,
+        phone: formData.phone,
+        address: formData.address,
+        zoneName: currentZone.name,
         subtotal,
         deliveryFee,
         grandTotal,
+        total: grandTotal,
+        status: 'Cooking in Kitchen',
+        createdAt: 'Just now',
         date: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }),
         deliverySlot: formData.deliverySlot,
         paymentMethod: formData.paymentMethod

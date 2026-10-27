@@ -1,8 +1,8 @@
 {
   "framework": "vite",
-  "buildCommand": "npx vite build",
+  "installCommand": "rm -rf node_modules && npm install",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install",
   "rewrites": [
     {
       "source": "/(.*)",
